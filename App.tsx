@@ -2,14 +2,19 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
+  StyleSheet
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHome, faCreditCard, faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { Provider } from 'react-redux';
 import { store } from './src/state';
+
+import Colors from './src/theme/Color';
+import Size from './src/theme/Size';
 
 import ReduxExample from './src/screens/ReduxExample';
 import Home from './src/screens/Home';
@@ -17,25 +22,68 @@ import Income from './src/screens/Income';
 import Outcome from './src/screens/Outcome';
 import Profile from './src/screens/Profile';
 
+import StatusBar from './src/components/StatusBar';
+
 const Tab = createBottomTabNavigator();
 
 const App = () => {
 
   React.useEffect(() => {
-    RNBootSplash.hide({fade: true});
+    RNBootSplash.hide({ fade: true });
     console.log("Bootsplash has been hidden successfully");
   }, []);
 
   return (
     <Provider store={store}>
       <NavigationContainer>
+        <StatusBar backgroundColor={Colors.pastelPink} barStyle="light-content" />
         <SafeAreaView style={styles.container}>
           {/* <ReduxExample/> */}
-          <Tab.Navigator>
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Income" component={Income} />
-            <Tab.Screen name="Outcome" component={Outcome} />
-            <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Navigator
+            initialRouteName="Home"
+            tabBarOptions={{
+              activeTintColor: Colors.pastelPink,
+              labelStyle: {
+                fontSize: Size.medium
+              }
+            }}
+          >
+            <Tab.Screen
+              name="Home"
+              component={Home}
+              options={{
+                tabBarIcon: (props) => (
+                  <FontAwesomeIcon icon={faHome} color={Colors.pastelPink} size={24} />
+                )
+              }}
+            />
+            <Tab.Screen
+              name="Income"
+              component={Income}
+              options={{
+                tabBarIcon: (props) => (
+                  <FontAwesomeIcon icon={faCreditCard} color={Colors.pastelPink} size={24} />
+                )
+              }}
+            />
+            <Tab.Screen
+              name="Outcome"
+              component={Outcome}
+              options={{
+                tabBarIcon: (props) => (
+                  <FontAwesomeIcon icon={faShoppingCart} color={Colors.pastelPink} size={24} />
+                )
+              }}
+            />
+            <Tab.Screen
+              name="Profile"
+              component={Profile}
+              options={{
+                tabBarIcon: (props) => (
+                  <FontAwesomeIcon icon={faUserCircle} color={Colors.pastelPink} size={24} />
+                )
+              }}
+            />
           </Tab.Navigator>
         </SafeAreaView>
       </NavigationContainer>
@@ -45,7 +93,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: Colors.backgroundColor
   }
 });
 

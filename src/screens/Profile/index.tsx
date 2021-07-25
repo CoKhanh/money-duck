@@ -11,7 +11,7 @@ const Profile = (props: State) => {
 
     return (
         <View>
-            <Text>Outcome Page</Text>
+            <Text>Profile Page</Text>
         </View>
     )
 }

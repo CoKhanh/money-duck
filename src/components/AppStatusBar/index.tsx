@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 
-const _StatusBar = ({backgroundColor, ...props}) => {
+const AppStatusBar = ({backgroundColor, ...props}) => {
     return (
         <View style={[styles.statusBar, { backgroundColor }]}>
             <SafeAreaView>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default _StatusBar;
+export default AppStatusBar;

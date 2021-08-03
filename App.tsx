@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faCreditCard, faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,7 +22,7 @@ import Income from './src/screens/Income';
 import Outcome from './src/screens/Outcome';
 import Profile from './src/screens/Profile';
 
-import StatusBar from './src/components/StatusBar';
+import StatusBar from './src/components/AppStatusBar';
 
 const Tab = createBottomTabNavigator();
 

@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {
-  SafeAreaView,
+  View,
   StyleSheet
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
@@ -50,7 +50,7 @@ const App = () => {
       <NavigationContainer>
         <PaperProvider theme={theme}>
           <StatusBar backgroundColor={Colors.pastelPink} barStyle="light-content" />
-          <SafeAreaView style={styles.container}>
+          <View style={styles.container}>
             {/* <ReduxExample/> */}
             <Tab.Navigator
               initialRouteName="Home"
@@ -98,7 +98,7 @@ const App = () => {
                 }}
               />
             </Tab.Navigator>
-          </SafeAreaView>
+          </View>
         </PaperProvider>
       </NavigationContainer>
     </Provider>

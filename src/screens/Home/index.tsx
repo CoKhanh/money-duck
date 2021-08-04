@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,6 +7,8 @@ import { connect, useDispatch } from 'react-redux';
 import { onSetUpRedux } from '../../state/auth/action';
 
 import Colors from '../../theme/Color';
+import ContainerStyles from '../../styles/ContainerStyle';
+import CardStyle from '../../styles/CardStyle';
 
 import { State } from '../../state/types';
 
@@ -16,10 +18,16 @@ const Home = (props: State) => {
     const dispatch = useDispatch();
 
     return (
-        <View>
-            <GlobalHeader title='Home'/>
-            <Text>Home Page</Text>
-            <FontAwesomeIcon icon={faHome} color={Colors.pastelPink} size={24}/>
+        <View style={ContainerStyles.container}>
+            <GlobalHeader title='Home' />
+            <ScrollView contentContainerStyle={{ padding: 15 }}>
+                <View style={CardStyle.chart}>
+
+                </View>
+                <View style={CardStyle.detail}>
+
+                </View>
+            </ScrollView>
         </View>
     )
 }

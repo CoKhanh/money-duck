@@ -6,11 +6,14 @@ import { onSetUpRedux } from '../../state/auth/action';
 
 import { State } from '../../state/types';
 
+import GlobalHeader from '../../components/GlobalHeader';
+
 const Profile = (props: State) => {
     const dispatch = useDispatch();
 
     return (
         <View>
+            <GlobalHeader title='Profile' />
             <Text>Profile Page</Text>
         </View>
     )

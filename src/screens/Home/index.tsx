@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StatusBar, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,11 +10,14 @@ import Colors from '../../theme/Color';
 
 import { State } from '../../state/types';
 
+import GlobalHeader from '../../components/GlobalHeader';
+
 const Home = (props: State) => {
     const dispatch = useDispatch();
 
     return (
         <View>
+            <GlobalHeader title='Home'/>
             <Text>Home Page</Text>
             <FontAwesomeIcon icon={faHome} color={Colors.pastelPink} size={24}/>
         </View>

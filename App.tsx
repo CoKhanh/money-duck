@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faCreditCard, faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { configureFonts, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import {createIntl, createIntlCache, RawIntlProvider} from 'react-intl';
 import 'intl';
 import 'intl/locale-data/jsonp/de-DE';
@@ -37,6 +37,7 @@ if (Platform.OS === "android") {
 }
 
 const Tab = createBottomTabNavigator();
+
 const theme = {
   ...DefaultTheme,
   roundness: 2,

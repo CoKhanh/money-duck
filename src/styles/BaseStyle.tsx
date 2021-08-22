@@ -16,4 +16,10 @@ export default StyleSheet.create({
     mr20: {
         marginRight: 20
     },
+    justifyContentsCenter: {
+        justifyContent: 'center',
+    },
+    justifyContentsSpaceBetween: {
+        justifyContent: 'space-between',
+    },
 })

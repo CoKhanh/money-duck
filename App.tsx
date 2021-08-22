@@ -38,6 +38,63 @@ if (Platform.OS === "android") {
 
 const Tab = createBottomTabNavigator();
 
+const fontConfig = {
+  web: {
+    regular: {
+      fontFamily: 'EncodeSans-Regular',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    medium: {
+      fontFamily: 'EncodeSans-Medium',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    light: {
+      fontFamily: 'EncodeSans-Light',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    thin: {
+      fontFamily: 'EncodeSans-Thin',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+  },
+  ios: {
+    regular: {
+      fontFamily: 'EncodeSans-Regular',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    medium: {
+      fontFamily: 'EncodeSans-Medium',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    light: {
+      fontFamily: 'EncodeSans-Light',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    thin: {
+      fontFamily: 'EncodeSans-Thin',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+  },
+  android: {
+    regular: {
+      fontFamily: 'EncodeSans-Regular',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    medium: {
+      fontFamily: 'EncodeSans-Medium',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    light: {
+      fontFamily: 'EncodeSans-Light',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+    thin: {
+      fontFamily: 'EncodeSans-Thin',
+      fontWeight: 'normal',
+    } as React.CSSProperties,
+  }
+};
+
 const theme = {
   ...DefaultTheme,
   roundness: 2,
@@ -45,9 +102,7 @@ const theme = {
     ...DefaultTheme.colors,
     primary: Colors.pastelPink,
   },
-  fonts: {
-    regular: 1
-  },
+  fonts: configureFonts(fontConfig),
 };
 
 const cache = createIntlCache()

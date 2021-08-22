@@ -8,13 +8,13 @@ import { State } from '../../state/types';
 
 import GlobalHeader from '../../components/GlobalHeader';
 
-const Outcome = (props: State) => {
+const Expense = (props: State) => {
     const dispatch = useDispatch();
 
     return (
         <View>
-            <GlobalHeader title='Outcome'/>
-            <Text>Outcome Page</Text>
+            <GlobalHeader title='Expense'/>
+            <Text>Expense Page</Text>
         </View>
     )
 }
@@ -25,4 +25,4 @@ const mapStateToProps = (state: any) => ({
 
 export default connect(mapStateToProps, {
     onSetUpRedux,
-})(Outcome);
+})(Expense);

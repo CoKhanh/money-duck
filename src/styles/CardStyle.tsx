@@ -7,7 +7,8 @@ export default StyleSheet.create({
         height: 300,
         marginVertical: 10,
         backgroundColor: Colors.white,
-        borderRadius: 11
+        borderRadius: 11,
+        // paddingRight: 50
     },
     detail: {
         width: '100%',
